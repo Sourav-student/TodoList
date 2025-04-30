@@ -1,33 +1,34 @@
 import React, { useEffect, useState } from 'react'
+import { FetchTodo, DeleteTodo } from '../api/todoApi';
+import Delete from '/delete.svg'
 
 const Normal = () => {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/TodoList`)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then(data => {
-        setTodos(data)
-      })
-      .catch(err => console.error("Error fetching todos:", err));
-  }, []);
+    const fetchData = async () => {
+      const data = await FetchTodo();
+      setTodos(data);
+    }
+
+    fetchData();
+  }, [todos]);
+
+  const handleDelete = async (id) => {
+    DeleteTodo(id)
+  }
 
   return (
     <div className='flex justify-center max-md:justify-normal max-md:ml-3 max-md:w-[90vw] items-center'>
       {
         todos.length == 0 ?
-          <p className='pl-3 text-lg'>No Tasks are Remains</p> :
-          <ul className='pl-1 w-[50vw] max-md:w-[100%]'>
+          <p className='pl-3 text-lg'>No Todos are found</p> :
+          <ul className='max-md:ml-4 w-[50vw] max-md:w-[100%]'>
             {
               todos.map((todo) => (
-                todo.difficulty != "Normal" ? "" :
-                  <li className='flex justify-between p-2 bg-stone-600 mb-3 mt-3 rounded-lg text-white font-light text-xl' key={todo._id}>
-                    <strong>{todo.todo} </strong> <div><span className='text-sm'>{todo.difficulty}</span></div>
+                todo.difficulty != "Normal" ? <p>No Normal todo</p> :
+                  <li className='flex justify-between p-2 bg-stone-700 mb-3 mt-3 rounded-lg text-white font-light text-xl' key={todo._id}>
+                    <p>{todo.todo} </p> <div><span className='font-medium text-sm'>{todo.difficulty}</span><span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img src={Delete} alt="delete" /></span></div>
                   </li>
               ))
             }
