@@ -9,7 +9,6 @@ export const FetchTodo = async ()=> {
     return res.json();
 
   } catch (error) {
-    console.log(error)
   }
 }
 
@@ -20,6 +19,5 @@ export const DeleteTodo = async (id)=>{
       method: 'DELETE',
     })
   } catch (error) {
-    console.log(error)
   }
 }
