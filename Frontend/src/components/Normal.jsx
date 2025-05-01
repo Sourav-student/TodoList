@@ -22,13 +22,13 @@ const Normal = () => {
     <div className='flex justify-center max-md:justify-normal max-md:ml-3 max-md:w-[90vw] items-center'>
       {
         todos.length == 0 ?
-          <p className='pl-3 text-lg'>No Todos are found</p> :
+          <p className='pl-3 text-lg'>No Normal Todos are found</p> :
           <ul className='max-md:ml-4 w-[50vw] max-md:w-[100%]'>
             {
               todos.map((todo) => (
-                todo.difficulty != "Normal" ? <p>No Normal todo</p> :
+                todo.difficulty != "Normal" ? "" :
                   <li className='flex justify-between p-2 bg-stone-700 mb-3 mt-3 rounded-lg text-white font-light text-xl' key={todo._id}>
-                    <p>{todo.todo} </p> <div><span className='font-medium text-sm'>{todo.difficulty}</span><span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img src={Delete} alt="delete" /></span></div>
+                    <p>{todo.todo} </p> <div  className='flex gap-1 flex-wrap'><span className='font-medium text-sm'>{todo.difficulty}</span><span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img src={Delete} alt="delete" /></span></div>
                   </li>
               ))
             }

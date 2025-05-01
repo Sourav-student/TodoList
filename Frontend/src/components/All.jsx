@@ -29,7 +29,7 @@ const All = () => {
                 todos.map((todo) => (
                   <li className='flex justify-between p-2 bg-stone-700 mb-3 mt-3 rounded-lg text-white font-light text-xl' key={todo._id}>
                     <p>{todo.todo} </p>
-                    <div className='flex gap-1'>
+                    <div className='flex gap-1 flex-wrap'>
                       <span className={`text-sm font-medium ${todo.difficulty === "Hard" ? "text-[#bd0000]" : "text-white"}`}>{todo.difficulty}</span>
                       <span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img src={Delete} alt="delete" /></span>
                     </div>

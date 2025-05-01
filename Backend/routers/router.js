@@ -44,10 +44,10 @@ router.delete("/TodoList/:id", async (req, res) => {
     await Todo.findByIdAndDelete(id); //Delete by id
     const data = await Todo.find();
     res.json(data);
-    res.status(200).send("Todo deleted successfully");
+    return res.status(200).send("Deleted successfully");
   } catch (error) {
     console.log("Delete error:", error.message);
-    res.status(500).send("Error in delelting todos");
+    return res.status(500).send("Error in delelting todos");
   }
 })
 
