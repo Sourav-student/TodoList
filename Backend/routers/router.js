@@ -42,13 +42,24 @@ router.delete("/TodoList/:id", async (req, res) => {
   const { id } = req.params;
   try {
     await Todo.findByIdAndDelete(id); //Delete by id
-    const data = await Todo.find();
-    res.json(data);
     return res.status(200).send("Deleted successfully");
   } catch (error) {
     console.log("Delete error:", error.message);
     return res.status(500).send("Error in delelting todos");
   }
 })
+
+//Patch Request
+router.patch("/TodoList/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+     await  Todo.findByIdAndUpdate(id, {completed : true})
+    return res.status(200).send("Deleted successfully");
+  } catch (error) {
+    console.log("Delete error:", error.message);
+    return res.status(500).send("Error in delelting todos");
+  }
+})
+
 
 export default router;

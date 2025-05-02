@@ -9,6 +9,7 @@ export const FetchTodo = async ()=> {
     return res.json();
 
   } catch (error) {
+    console.log(error)
   }
 }
 
@@ -19,5 +20,16 @@ export const DeleteTodo = async (id)=>{
       method: 'DELETE',
     })
   } catch (error) {
+    console.log(error)
+  }
+}
+
+export const CompleteTodo = async (id)=>{
+  try {
+    await fetch(`${import.meta.env.VITE_API_URL}/TodoList/${id}`, {
+      method: 'PATCH',
+    })
+  } catch (error) {
+    console.log(error)
   }
 }

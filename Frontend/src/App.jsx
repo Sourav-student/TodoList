@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router'
 import Navbar from './components/Navbar'
-import MainBody from './components/MainBody'
+import CategoryList from './components/CategoryList'
 import All from './components/All'
 import Normal from './components/Normal'
 import Medium from './components/Medium'
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <MainBody/>
+      <CategoryList/>
       <Routes>
         <Route path='/' Component={All}/>
         <Route path='/Normal' Component={Normal}/>
