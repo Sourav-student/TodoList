@@ -38,7 +38,11 @@ const Normal = () => {
               todos.map((todo) => (
                 todo.difficulty != "Normal" || todo.completed === true ? "" :
                   <li className='flex justify-between p-2 bg-[#2b2b2b] mb-3 mt-3 rounded-lg text-white font-light items-center text-xl shadow-xl' key={todo._id}>
-                    <p>{todo.todo} </p> <div className='flex gap-1 flex-wrap'><span className='font-medium text-sm'>{todo.difficulty}</span><span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img src={Delete} alt="delete" />
+                    <div className='flex flex-col gap-1'>
+                      <p>{todo.todo} </p>
+                      <p className='text-[14px]'>{todo.createdAt}</p>
+                    </div>
+                    <div className='flex gap-1 flex-wrap'><span className='font-medium text-sm'>{todo.difficulty}</span><span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img src={Delete} alt="delete" />
                     </span>
                       <span className=' cursor-pointer' onClick={() => handleComplete(todo._id)}><img src={CompleteImg} alt="complete" />
                       </span>

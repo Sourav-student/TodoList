@@ -37,8 +37,10 @@ const All = () => {
                 todos.map((todo) => (
                   todo.completed === true ? "" :
                     <li className='flex justify-between p-2 bg-[#2b2b2b] mb-3 mt-3 rounded-lg text-white font-light items-center text-xl shadow-xl' key={todo._id}>
-                      <p>{todo.todo} </p>
-
+                      <div className='flex flex-col gap-1'>
+                        <p>{todo.todo} </p>
+                        <p className='text-[14px]'>{todo.createdAt}</p>
+                      </div>
                       <div className='flex gap-1 flex-wrap'>
                         <span className={`text-sm font-medium ${todo.difficulty === "Hard" ? "text-[#bd0000]" : "text-white"}`}>{todo.difficulty}
                         </span>
