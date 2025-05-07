@@ -37,10 +37,10 @@ const Hard = () => {
             {
               todos.map((todo) => (
                 todo.difficulty != "Hard" || todo.completed === true ? "" :
-                  <li className='flex justify-between p-2 bg-[#2b2b2b] mb-3 mt-3 rounded-lg text-white font-light items-center text-xl shadow-xl' key={todo._id}>
-                    <div className='flex flex-col gap-1'>
-                      <p>{todo.todo} </p>
-                      <p className='text-[14px]'>{todo.createdAt}</p>
+                  <li className='flex justify-between p-2 bg-[#2b2b2b] mb-3 mt-3 rounded-lg text-white font-light items-center shadow-xl' key={todo._id}>
+                    <div className='flex flex-col gap-1 text-[17px]'>
+                      <p className=' max-w-[250px]'>{todo.todo} </p>
+                      <p className='text-[12px]'>{todo.createdAt}</p>
                     </div>
                     <div className='flex gap-1 flex-wrap'><span className='text-sm text-red-600 font-medium'>{todo.difficulty}</span><span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img src={Delete} alt="delete" /></span>
                       <span className=' cursor-pointer' onClick={() => handleComplete(todo._id)}><img src={CompleteImg} alt="complete" />

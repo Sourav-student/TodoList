@@ -3,19 +3,10 @@ import mongoose from 'mongoose';
 import cors from 'cors'
 import dotenv from 'dotenv';
 import router from './routers/router.js';
+import connectDB from './configs/connectDB.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-//Connected to mongoDB
-const connectDB = async () => {
-  try {
-    await mongoose.connect(`${process.env.MONGODB_URL}`, { useNewUrlParser: true, useUnifiedTopology: true })
-    console.log("DB connected");
-  } catch (error) {
-    console.log("database error", error.message);
-  }
-}
 
 //Middleware
 app.use(express.urlencoded({ extended: true }))

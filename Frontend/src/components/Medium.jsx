@@ -37,14 +37,17 @@ const Medium = () => {
             {
               todos.map((todo) => (
                 todo.difficulty != "Medium" || todo.completed === true ? "" :
-                  <li className='flex justify-between p-2 bg-[#2b2b2b] mb-3 mt-3 rounded-lg text-white font-light items-center text-xl shadow-xl' key={todo._id}>
-                    <div className='flex flex-col gap-1'>
-                      <p>{todo.todo} </p>
-                      <p className='text-[14px]'>{todo.createdAt}</p>
+                  <li className='flex justify-between p-2 bg-[#2b2b2b] mb-3 mt-3 rounded-lg text-white font-light items-center shadow-xl' key={todo._id}>
+                    <div className='flex flex-col gap-1 md:text-xl text-[17px]'>
+                      <p className='max-w-[250px] max-sm:max-w-[180px]'>{todo.todo} </p>
+                      <p className='text-[12px]'>{todo.createdAt}</p>
                     </div>
-                    <div className='flex gap-1 flex-wrap'><span className='font-medium text-sm'>{todo.difficulty}</span><span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img src={Delete} alt="delete" /></span>
-                      <span className=' cursor-pointer' onClick={() => handleComplete(todo._id)}><img src={CompleteImg} alt="complete" />
-                      </span></div>
+                    <div className='flex gap-1 flex-wrap'>
+                      <span className='text-[15px]'>{todo.difficulty}</span><span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img className='max-md:w-5' src={Delete} alt="delete" />
+                      </span>
+                      <span className=' cursor-pointer' onClick={() => handleComplete(todo._id)}><img className='max-md:w-5' src={CompleteImg} alt="complete" />
+                      </span>
+                    </div>
                   </li>
               ))
             }
