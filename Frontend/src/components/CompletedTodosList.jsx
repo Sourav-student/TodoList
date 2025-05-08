@@ -27,17 +27,17 @@ const CompletedTodosList = ({ openCompletedTodos }) => {
 
   return (
 
-    <div className={`flex flex-col items-center absolute bg-[#006666] w-[95vw] p-4 h-[80%] transition-all duration-100 ${!openCompletedTodos ? "hidden top-[-100%]" : "block top-20"}`}>
+    <div className={`flex flex-col items-center absolute bg-[#f4f4f9] w-[95vw] p-4 h-[80%] transition-all duration-100 ${!openCompletedTodos ? "hidden top-[-100%]" : "block top-20"}`}>
       <div className=' flex justify-evenly w-[100%] items-center'>
-        <h1 className='text-xl text-green-100 font-serif'>Completed Todos</h1>
-        <span className='text-xl text-white'>{point}</span>
+        <h1 className='text-xl text-[#111827] font-serif'>Completed Todos</h1>
+        <span className='text-xl text-[#111827 ]'>{point}</span>
       </div>
       {
         <ul className='max-md:ml-4 w-[50vw] max-md:w-[100%]'>
           {
             todos.map((todo) => (
               todo.completed && (
-                <li className='flex justify-between p-2 bg-[#2b2b2b] mb-3 mt-3 rounded-lg text-white font-light items-center shadow-xl' key={todo._id}>
+                <li className='flex justify-between p-2 bg-[#ffffff] mb-3 mt-3 rounded-lg font-light items-center shadow-xl text-[#1e1e1e]' key={todo._id}>
                   <div className='flex flex-col gap-1 text-[17px]'>
                     <p className='max-sm:max-w-[200px] max-w-[250px]'>{todo.todo} </p>
                     <p className='text-[12px]'>{todo.createdAt}</p>

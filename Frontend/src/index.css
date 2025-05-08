@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.box-shawdom{
-  box-shadow: inset 0px 0px 9px 3px;
+*{
+  font-family: 'Inter', sans-serif;
 }

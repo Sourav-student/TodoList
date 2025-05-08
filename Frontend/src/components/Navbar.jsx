@@ -20,15 +20,15 @@ const Navbar = () => {
   return (
     <div className=' flex justify-around p-5'>
       <div>
-        <h1 className='p-2 font-serif font-semibold text-2xl text-[#77ff00]'>TodoList</h1>
+        <h1 className='p-2 font-semibold text-2xl text-[#1f2937]'>TodoList</h1>
       </div>
       <div className='flex gap-1'>
-        <button className='flex justify-center items-center gap-2 bg-orange-500 p-1 rounded-xl font-sans font-medium cursor-pointer' onClick={handleOpen}>
+        <button className="flex text-sm bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white font-semibold px-2 py-2 rounded-lg shadow-md transition duration-200" onClick={handleOpen}>
           <img src={!openTodo ? Plus : Minus} alt="icon" />
           {openTodo ? " Cancel Todo" : "Add Todo"}
         </button>
-        <button className='flex justify-center items-center bg-orange-500 p-1 rounded-xl font-sans font-medium cursor-pointer' onClick={handleCompletedTodosList}>
-          <img src={openCompletedTodos ? Minus : Done} className='w-10' title='completed todos' alt="icon" />
+        <button className='flex text-sm bg-orange-500 hover:bg-orange-400 active:bg-orange-600 text-white font-semibold px-2 py-2 rounded-lg shadow-md transition duration-200' onClick={handleCompletedTodosList}>
+          <img src={openCompletedTodos ? Minus : Done} title='completed todos' alt="icon" />
         </button>
       </div>
 

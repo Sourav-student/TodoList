@@ -29,21 +29,23 @@ const Hard = () => {
 
 
   return (
-    <div className='flex justify-center max-md:justify-normal max-md:ml-3 max-md:w-[90vw] items-center'>
+    <div className='flex justify-center max-md:justify-normal max-md:ml-3 max-md:w-[90vw] items-center text-[#1e1e1e]'>
       {
         todos.length == 0 ?
-          <p className='pl-3 text-xl text-white'>No Hard Todos are found</p> :
+          <p className='pl-3 text-xl'>No Hard Todos are found</p> :
           <ul className='max-md:ml-4 w-[50vw] max-md:w-[100%]'>
             {
               todos.map((todo) => (
                 todo.difficulty != "Hard" || todo.completed === true ? "" :
-                  <li className='flex justify-between p-2 bg-[#2b2b2b] mb-3 mt-3 rounded-lg text-white font-light items-center shadow-xl' key={todo._id}>
-                    <div className='flex flex-col gap-1 text-[17px]'>
-                      <p className=' max-w-[250px]'>{todo.todo} </p>
+                  <li className='flex justify-between p-2 bg-[#ffffff] mb-3 mt-3 rounded-lg font-light items-center shadow-xl' key={todo._id}>
+                    <div className='flex flex-col gap-1 sm:text-xl text-[16px]'>
+                      <p className='max-w-[500px] max-xl:max-w-[400px] max-lg:max-w-[280px] max-md:max-w-[450px] max-sm:max-w-[205px]'>{todo.todo} </p>
                       <p className='text-[12px]'>{todo.createdAt}</p>
                     </div>
-                    <div className='flex gap-1 flex-wrap'><span className='text-sm text-red-600 font-medium'>{todo.difficulty}</span><span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img src={Delete} alt="delete" /></span>
-                      <span className=' cursor-pointer' onClick={() => handleComplete(todo._id)}><img src={CompleteImg} alt="complete" />
+                    <div className='flex gap-1 flex-wrap'>
+                      <span className='text-[15px] max-sm:text-[12px]'>{todo.difficulty}</span><span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img className='max-md:w-5' src={Delete} alt="delete" />
+                      </span>
+                      <span className=' cursor-pointer' onClick={() => handleComplete(todo._id)}><img className='max-md:w-5' src={CompleteImg} alt="complete" />
                       </span>
                     </div>
                   </li>
