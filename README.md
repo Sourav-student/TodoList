@@ -1,4 +1,4 @@
-# Todo App (React + Express + MongoDB)
+# Todo App (React + Node + Express + MongoDB)
 
 A full-stack Todo app built with **React (Vite + Tailwind)** on the frontend and **Express + MongoDB** on the backend.
 
