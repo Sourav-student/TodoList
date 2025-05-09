@@ -19,6 +19,7 @@ A full-stack Todo app built with **React (Vite + Tailwind)** on the frontend and
 ### 1. Clone the repository
 ### 2. cd frontend
 npm install
+
 npm run dev
 
 ### 3. cd backend
