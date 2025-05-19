@@ -1,5 +1,18 @@
-# Ingnore node_module directory
-/node_module
+# Node modules
+/node_modules
 
-# Ingnore .env file
+# Environment variables
 .env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Optional: Ignore build or dist folder if you're using TypeScript or bundlers
+/dist
+/build
