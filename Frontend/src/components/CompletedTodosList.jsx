@@ -40,7 +40,7 @@ const CompletedTodosList = ({ openCompletedTodos }) => {
                 <li className='flex justify-between p-2 bg-[#ffffff] mb-3 mt-3 rounded-lg font-light items-center shadow-xl text-[#1e1e1e]' key={todo._id}>
                   <div className='flex flex-col gap-1 text-[18px]'>
                     <p className='max-sm:max-w-[200px] max-w-[290px] lg:max-w-[420px] xl:max-w-[500px]'>{todo.todo} </p>
-                    <p className='text-[12px]'>{todo.createdAt}</p>
+                    <p className='text-[12px]'>Date - {todo.createdAt.slice(0, 10)}</p>
                   </div>
                   <div className='flex gap-1 flex-wrap'>
                     <span className={`text-sm font-medium`}>{todo.difficulty}

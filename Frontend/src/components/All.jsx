@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FetchTodo, DeleteTodo, CompleteTodo } from '../api/todoApi';
 import Delete from '/delete.svg'
 import CompleteImg from '/completeImg.svg'
@@ -39,7 +39,7 @@ const All = () => {
                     <li className='flex justify-between p-2 bg-[#ffffff] mb-3 mt-3 rounded-lg font-light items-center shadow-xl li' key={todo._id}>
                       <div className='flex flex-col gap-1 sm:text-xl text-[16px]'>
                         <p className='max-w-[500px] max-xl:max-w-[400px] max-lg:max-w-[280px] max-md:max-w-[450px] max-sm:max-w-[205px]'>{todo.todo} </p>
-                        <p className='text-[12px]'>{todo.createdAt}</p>
+                        <p className='text-[12px]'>Date - {todo.createdAt.slice(0, 10)}</p>
                       </div>
                       <div className='flex gap-1 flex-wrap'>
                         <span className='text-[15px] max-sm:text-[12px]'>{todo.difficulty}</span><span className=' cursor-pointer' onClick={() => handleDelete(todo._id)}><img className='max-md:w-5' src={Delete} alt="delete" />
