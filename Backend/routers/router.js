@@ -47,7 +47,6 @@ router.get("/TodoList", async (req, res) => {
     const [data] = await db.execute(
       `select * from todos`
     ); //Find all data from DB
-    console.log(data);
     res.json(data); //response DB
   } catch (error) {
     console.log("Fetch error:", error.message);
@@ -64,7 +63,7 @@ router.delete("/TodoList/:id", async (req, res) => {
 
     //using MYSQL
     await db.execute(
-      `delete from users where _id = ${id}`
+      `delete from todos where _id = ${id}`
     ); //Delete by id
     return res.status(200).send("Deleted successfully");
   } catch (error) {
@@ -83,7 +82,9 @@ router.patch("/TodoList/:id", async (req, res) => {
     //using MySQL
     await db.execute(
       `
-      update todos set completed = true where id = ${id}
+      update todos 
+      set completed = true 
+      where _id = ${id}
       `
     )
 

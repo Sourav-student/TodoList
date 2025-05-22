@@ -35,7 +35,7 @@ const All = () => {
             <ul className='max-md:ml-4 w-[50vw] max-md:w-[100%]'>
               {
                 todos.map((todo) => (
-                  todo.completed === true ? "" :
+                  todo.completed == true ? "" :
                     <li className='flex justify-between p-2 bg-[#ffffff] mb-3 mt-3 rounded-lg font-light items-center shadow-xl li' key={todo._id}>
                       <div className='flex flex-col gap-1 sm:text-xl text-[16px]'>
                         <p className='max-w-[500px] max-xl:max-w-[400px] max-lg:max-w-[280px] max-md:max-w-[450px] max-sm:max-w-[205px]'>{todo.todo} </p>
